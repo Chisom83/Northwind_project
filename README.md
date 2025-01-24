@@ -5,7 +5,6 @@ This is all about my capstone project
 Northwind Traders is a global supplier of specialty food products and this project intails helping Northwind optimize its operations by analyzing customer orders, product performance, shipping efficiency and employee management by building a database with the provided data and quering it to answer business questions and creating an intractive dashboard using any BI tool to derive actionable insight, answer critical business questions, identify opportunities for growth and efficiency.
 
 ### Business Requirement
-Dashboard Requirement
 
 ❑ Key Metrics:
 
@@ -34,20 +33,14 @@ Dashboard Requirement
 - Structure Query Language(SQL): for querying the data
 - Power Bi: for data visualizations
 
-### Steps Followed
-The dataset was in xls file so i converted it to a csv file first to enable me work on it effectively. Duplicate were removed then i created the needed table in SQL and imported the dataset into SQL.
-
-After importing the data into SQL, I started to query it by answering the business questions. When done with that I imported the data in power Bi to turn it into a finished product(visualization). A lot of steps and measures were followed and created to  ensure a good dashboard will be achived and the processes will be explained better in the visualization section.
+### Data Preparation
+- Data Conversion: The original dataset was in xls format, so i converted it to a csv for better compactibility and efficiency in procesing.
+- Data Cleaning: Duplicate were removed and I ensured the dataset was clean and ready for analysis.
 
 ### SQL
-Building a database 
-
-First a database was created then I created table to import the data into the database created.
-
-
----view table
-SELECT * 
-FROM customers;
+- Table Creation: Designed and created the required table structure in SQL to accomodate the dataset. 
+- Data Import: Imported the cleaned dataset into SQL for further analysis.
+- Querying Data: Wrote and executed SQL queries to answer bussiness questions.
 
 --Key Performance Indicator KPIs
 ```
