@@ -420,41 +420,39 @@ The performance of the best/worst selling product is due to one of the following
    
       -  targeted promotions should be run for new product in stock to increase awareness and trial purchases.
 
-```DAX
-TotalQuantity = SUM('order details'[quantity] )
-```
+3. Can you identify any key customers?
 
-I created a table to show the top and buttom field 
-``
-TopButtom = {"top","Buttom"}
-``` Power BI
+To identify key customers, the following steps were taken:
+    - Chart Type: Bar Chart
+    - Y - Axis: customer_id
+    - X - Axis: Total Revenue
+    - Legend: Company_Name
+    - Tooltip: Quantity
+- To show the key customer I applied a Top N filter on customer_id in the filter pane, set it to Top 5 based on Total Revenue and click Apply Filter.
 
-Lastly i created a ranking tableto see any rank I want to see.
-```
-Ranking option = GENERATESERIES(1, 5, 1)
-``` Power BI
+#### Insights
 
-After creating all these measure and table I combined them together in order to achieved this unique chart using a bar chart, then used the Ranking option and TopButtom table as a slicer. 
-``
-BestWorstSellingProduct = 
-VAR _bestproduct = RANKX( ALL(products),[TotalQuantity], ,DESC)
-VAR _worstproduct = RANKX( ALL(products),[TotalQuantity], ,ASC)
-VAR _ranking = IF(SELECTEDVALUE(TopButtom[Value]) = "top"
-    ,_bestproduct
-    ,_worstproduct
-)
-RETURN
-IF(_ranking <= 'Ranking option'[Ranking option Value], [TotalQuantity])
-``` Power BI
+General Insight
+     - SAVEA is the overall key customer with a total revenue of $94,063, followed by ERNSH with a total revenue of $85,630.
+##### Yearly Breakdown
+2013
+   - ERNSH was the key customer with a total revenue of $17,368, followed by FRANK with $12,191.
+2014
+  - SAVEA emerged as the key customer with a total revenue of $48,715, followed by FRANK with $45,945.
+2015
+  - SAVEA retained its position as the key customer with a total revenue of $35,549, followed by HANAR with $23,821.
 
-❑ Can you identify any key customers?
-In identifying key customer I selected a bar chart I draged the Customer_Id to Y axis, the Total Revenue to the X axis and finaly the cumpany_Name to the Legend. Then I clicked on the fliter pane and applied Top N filter on Customer_Name, set it to "Top 5",and base it on Total Revenue.
+#### Inference
+1. Starting in 2014, SAVEA consistently became the key customer, contributing the highest revenue across 2014 and 2015. This indicates a strong and growing market strategy
+2. Key customers like SAVEA and ERNSH have show strong engagement with NorthWind Traders, which includes higher order or quantity.
 
-### customize the visuals
-- Use the Format page to adjust colors, fonts and labels.
-- Add titles and data label to the visuals.
+#### Recommendation
+1. Maintain Strong Relationship with Key Customers
+   - Focused on strengthening relationships with key customers through personalized discounts and exclusive offer.
+2. Customer Retension Strategy 
+   - Ensure continous support to key customers by offering excellent customer service and frequent check-ins to understand their evolving needs.
 
-❑ Are shipping costs consistent across providers?
+4. Are shipping costs consistent across providers?
 I created a measure to calculate for the Range. i draged my Company_Name to the Y axis and shippingCostRange to the X axis. Then used a Bar Chart to visualize it. 
 ``
 ShippingCostRange = 
@@ -479,6 +477,9 @@ OnTimeDelivery =
     orders[shippedDate] <= orders[requiredDate])
 ``` Power BI
 
- 
+
+### customize the visuals
+- Use the Format page to adjust colors, fonts and labels.
+- Add titles and data label to the visuals. 
 
  
