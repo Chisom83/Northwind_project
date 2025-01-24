@@ -285,13 +285,14 @@ RETURN "PY:" & PCT & ARROW_SIGN
 ### Business Questions:
 1. Are there any noticeable sales trends over time?
 - To analyze sales trends over time, the following steps were taken:
+
 The Total Revenue calculated for the KPIs was used, the month field from the calendar table was used for grouping. A line chart was plotted to visualize the trends.
 Tooltip was created in a different page showing the Total Revenue and Total Quantity per month.
-##### Insights
-#General Insight#
-- There is a noticeable sales trend overall.
-- From October to April, sales were high showing a peak period but from May to September, sales fluctuated and declined.
-###### Yearly Breakdown
+#### Insights
+General Insight
+     - There is a noticeable sales trend overall.
+     - From October to April, sales were high showing a peak period but from May to September, sales fluctuated and declined.
+##### Yearly Breakdown
 - 2013
    - Sales was recorded fro the second half of the year.
    - Peaks: November recorded the higest sales, followed by slight increase in October, December, July and August.
@@ -307,22 +308,22 @@ Tooltip was created in a different page showing the Total Revenue and Total Quan
    - Peaks: January to April show increase in sales.
    - Lows: May recorded a very low increase in sales
  
-##### Inference
+#### Inference
 The downward sales trend is attributed to some of these factors:
 
-##### Recommendations
+#### Recommendations
 1. Stock Management:
- - Ensure that goods are adequately stocked during high sales months and reduced during low sales month.
+      - Ensure that goods are adequately stocked during high sales months and reduced during low sales month.
 2. Market Research:
- -  Deeper research into the downward sales trend should be conducted, esspecially April to September.
- -  Customer preference should also be investigated inorder to stock up that generated sales.  
+     -  Deeper research into the downward sales trend should be conducted, esspecially April to September.
+     -  Customer preference should also be investigated inorder to stock up that generated sales.  
 3. Adjust Strategies:
- - Marketing strategies and promotions should be implemented during low sales months to boost demand.
- - Inventory management should be optimized to aling with sales pattern and avoid stock-outs.
+    - Marketing strategies and promotions should be implemented during low sales months to boost demand.
+    - Inventory management should be optimized to aling with sales pattern and avoid stock-outs.
    
 2. Which are the best and worst selling products?
 - To analyze the best and worst selling products, the following steps were taken:
-- 
+  
 This can be achieved by using different method by creating two different bar chart that will show the best selling product in quantity and the other chart worst selling product by quantity.
 The order method can be creating a measure that will show the best selling product and worst selling product in the same chart and creating a new table for top selling product and buttom selling product using it as a slicer to filter each.
 I used the the second method by creating a single bar chart that comporise both the best and worst selling product. in achieving this method different measures were created.
