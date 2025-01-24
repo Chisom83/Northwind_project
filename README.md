@@ -356,46 +356,68 @@ IF(_ranking <= 'Ranking option'[Ranking option Value], [TotalQuantity])
 General Insight
 
 - Best Selling Products
-        - Raclette Courdavault is the best selling product with a total quantity of 1368, followed by Gorgonzola Telino with 1347 total quantity.
+
+    - Raclette Courdavault is the best selling product with a total quantity of 1368, followed by Gorgonzola Telino with 1347 total quantity.
 - Worst Selling Products
-        - Genen Shouyv is the worst selling product with a total quantity of 72, followed by Mishi Kobe Niku with 79 total quantity.
+
+   - Genen Shouyv is the worst selling product with a total quantity of 72, followed by Mishi Kobe Niku with 79 total quantity.
   
 ##### Yearly Breakdown
 2013
 - Best Selling Products
-        - Gorgonzola Telino with 444 quantity, followed by Camembert Pierrot with 343 quantity.
+
+    - Gorgonzola Telino with 444 quantity, followed by Camembert Pierrot with 343 quantity.
   
 2014
 - Best Selling Products
-       - Gonocchi di nonna Alice with 846 quantity, followed by Raclette Courdavault with 706 quantity.
+  
+    - Gonocchi di nonna Alice with 846 quantity, followed by Raclette Courdavault with 706 quantity.
 - Worst Selling Products
-       - Chef Antons Gumbo Mix with 19 quantity, followed by Gravad Lax with 28 quantity.
+  
+    - Chef Antons Gumbo Mix with 19 quantity, followed by Gravad Lax with 28 quantity.
 
  2015
 - Best Selling Products
-       - Konbo with 521 quantity, followed by Guarana Fantastica with 464 quantity.
+  
+   - Konbo with 521 quantity, followed by Guarana Fantastica with 464 quantity.
+  
 - Worst Selling Products
-       - Mishi Kobe Niku with 3 quantity, followed by Chef Antons Cajun Seasoning with 5 quantity.
+  
+    - Mishi Kobe Niku with 3 quantity, followed by Chef Antons Cajun Seasoning with 5 quantity.
   
 #### Inference
 
 The performance of the best/worst selling product is due to one of the following:
+
 1. Best Selling Products
-      - The products are well marketed and meet high customer demand.
-      - They are consistently avaliable and competitive pricing.
+   
+   - The products are well marketed and meet high customer demand.
+        
+   - They are consistently avaliable and competitive pricing.
+        
 2. Worst Selling Products
-      - They are new products and haven't gained market traction yet.
-      - Lack of avaliability, low quality and lack of awareness of the product.
+   
+   - They are new products and haven't gained market traction yet.
+        
+   - Lack of avaliability, low quality and lack of awareness of the product.
 
 #### Recommendation
 1. Stock Management:
-       - Increase inventory for the best selling product to meet growing demand.
+   
+    - Increase inventory for the best selling product to meet growing demand.
+   
 2. Improvement for Worst Selling Products
+   
       - Collaboration with suppliers or manufacturers to understand the product issue and address potential quality or supply chain issues.
+        
 3. Customer Analysis:
+   
       - Conduct surveys and gather feedback to understand why customers are not really purchasing the worst selling products.
+        
       - The insight gotten from the survey should be used to improve marketing strategies and feedback should be given to the supplliers or manufacturers to improve product features and pricing.
+        
 4. Marketing Campaigns:
+   
       -  targeted promotions should be run for new product in stock to increase awareness and trial purchases.
 
 ```DAX
