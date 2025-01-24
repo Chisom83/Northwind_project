@@ -199,17 +199,29 @@ FROM orders
 GROUP BY delivery_status;
 ```
 
-### Visualizations
-The dataset was imported into power Bi from excel and click on transform in order to work on it and insure its uniqneness and accurate analysis after that i checked for duplicated. colums header names were changed and headers were replaced using the change header name using use first colum as header in the tab button. Colums that were not necessary for my analysis were deleted and the category and employment table were hidden because they were not necessary for my analysis. After which i closed and apply.
+### Data Visualizations
 
-Once it has closeand apply successfully, i clicked on my report view to check my connections and make necessary connections where needed. i clicked back on my reportview to start working on my visuals. I created calendar date table and i connected the table to the fact table.
+After SQL analysis,the data was imported into Power BI for visualization and reporting.
+- Data Transformation:
+. After importing the dataset, the Transform option was selected to make necessary corrections.
+. Column header were updated and replaced using the "Use First Row as Headers" option in the Power Query Editor
+. Unnecessary columns were deleted to streamline the dataset.
+. The Category and Employment tables were hidden as they were not relevant for the analysis
+. Changes were applied by clicking "Close & Apply."
 
-I created Dax measures to calculate for my KPIs which include the following
+- Data Modeling:
+. I switched to report view to verify the data connections and made necessary adjustments to ensure proper relationship between tables.
+. Calendar table was created and connected to the fact table to support time-based analysis.
 
-❑ Total Orders
-```
+- Visualization
+. Interactive  visualization were designed to highlight key insight, measures and calculated columns were created to enhance the dashboard.
+
+### KPIs Measures Created
+
+#### Total Orders
+```Power BI
 Total Orders = DISTINCTCOUNT(orders[orderID])
-``` Power Bi
+``` 
 
 ❑ Total Revenue
 ```
