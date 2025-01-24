@@ -203,23 +203,31 @@ GROUP BY delivery_status;
 
 After SQL analysis,the data was imported into Power BI for visualization and reporting.
 - Data Transformation:
-. After importing the dataset, the Transform option was selected to make necessary corrections.
-. Column header were updated and replaced using the "Use First Row as Headers" option in the Power Query Editor
-. Unnecessary columns were deleted to streamline the dataset.
-. The Category and Employment tables were hidden as they were not relevant for the analysis
-. Changes were applied by clicking "Close & Apply."
+
+- After importing the dataset, the Transform option was selected to make necessary corrections.
+
+- Column header were updated and replaced using the "Use First Row as Headers" option in the Power Query Editor
+
+- Unnecessary columns were deleted to streamline the dataset.
+
+- The Category and Employment tables were hidden as they were not relevant for the analysis
+
+- Changes were applied by clicking "Close & Apply."
 
 - Data Modeling:
-. I switched to report view to verify the data connections and made necessary adjustments to ensure proper relationship between tables.
-. Calendar table was created and connected to the fact table to support time-based analysis.
+ 
+- I switched to report view to verify the data connections and made necessary adjustments to ensure proper relationship between tables.
+  
+- Calendar table was created and connected to the fact table to support time-based analysis.
 
 - Visualization
-. Interactive  visualization were designed to highlight key insight, measures and calculated columns were created to enhance the dashboard.
+
+- Interactive  visualization were designed to highlight key insight, measures and calculated columns were created to enhance the dashboard.
 
 ### KPIs Measures Created
 
 #### Total Orders
-```Power BI
+```DAx
 Total Orders = DISTINCTCOUNT(orders[orderID])
 ``` 
 
