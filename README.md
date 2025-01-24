@@ -233,7 +233,8 @@ Total Orders = DISTINCTCOUNT(orders[orderID])
 
 ##### Total Revenue
 ```DAX
-Total Revenue = SUMX('order details', 'order details'[quantity] * RELATED(products[unitPrice]) * (1 - 'order details'[discount]))
+Total Revenue = SUMX('order details', 'order details'[quantity] *
+     RELATED(products[unitPrice]) * (1 - 'order details'[discount]))
 ``` 
 
 ##### Average Order Value
