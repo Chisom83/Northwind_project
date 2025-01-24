@@ -324,11 +324,79 @@ The downward sales trend is attributed to some of these factors:
     - Inventory management should be optimized to aling with sales pattern and avoid stock-outs.
    
 2. Which are the best and worst selling products?
-- To analyze the best and worst selling products, the following steps were taken:
+   
+To determine the best and worst selling products the following steps were taken:
+- Measure creation:
+       - Total Quantity measure was created to calculate the sum of quantities sold:
+```DAX  
+TotalQuantity = SUM('order details'[quantity] )
+```
+      - Ranking option table was created to show any number of best/worst selling product needed to be seen:
+```DAX      
+Ranking option = GENERATESERIES(1, 5, 1)
+```
+       - TopBottom table was created to filter top/bottom product dynamically:
+```DAX       
+TopButtom = {"top","Buttom"}
+```
+       - Created a ranking measure for product based on quantity along with its integration with other measures for comprehensive analysis:
+```DAX
+RankBestWorstSellingProduct = 
+VAR _bestproduct = RANKX( ALL(products),[TotalQuantity], ,DESC)
+VAR _worstproduct = RANKX( ALL(products),[TotalQuantity], ,ASC)
+
+VAR _ranking = IF(SELECTEDVALUE(TopButtom[Value]) = "top"
+    ,_bestproduct
+    ,_worstproduct
+)
+RETURN
+IF(_ranking <= 'Ranking option'[Ranking option Value], [TotalQuantity])
+```
+#### Insight 
+General Insight
+
+- Best Selling Products
+        - Raclette Courdavault is the best selling product with a total quantity of 1368, followed by Gorgonzola Telino with 1347 total quantity.
+- Worst Selling Products
+        - Genen Shouyv is the worst selling product with a total quantity of 72, followed by Mishi Kobe Niku with 79 total quantity.
   
-This can be achieved by using different method by creating two different bar chart that will show the best selling product in quantity and the other chart worst selling product by quantity.
-The order method can be creating a measure that will show the best selling product and worst selling product in the same chart and creating a new table for top selling product and buttom selling product using it as a slicer to filter each.
-I used the the second method by creating a single bar chart that comporise both the best and worst selling product. in achieving this method different measures were created.
+##### Yearly Breakdown
+2013
+- Best Selling Products
+        - Gorgonzola Telino with 444 quantity, followed by Camembert Pierrot with 343 quantity.
+  
+2014
+- Best Selling Products
+       - Gonocchi di nonna Alice with 846 quantity, followed by Raclette Courdavault with 706 quantity.
+- Worst Selling Products
+       - Chef Antons Gumbo Mix with 19 quantity, followed by Gravad Lax with 28 quantity.
+
+ 2015
+- Best Selling Products
+       - Konbo with 521 quantity, followed by Guarana Fantastica with 464 quantity.
+- Worst Selling Products
+       - Mishi Kobe Niku with 3 quantity, followed by Chef Antons Cajun Seasoning with 5 quantity.
+  
+#### Inference
+
+The performance of the best/worst selling product is due to one of the following:
+1. Best Selling Products
+      - The products are well marketed and meet high customer demand.
+      - They are consistently avaliable and competitive pricing.
+2. Worst Selling Products
+      - They are new products and haven't gained market traction yet.
+      - Lack of avaliability, low quality and lack of awareness of the product.
+
+#### Recommendation
+1. Stock Management:
+       - Increase inventory for the best selling product to meet growing demand.
+2. Improvement for Worst Selling Products
+      - Collaboration with suppliers or manufacturers to understand the product issue and address potential quality or supply chain issues.
+3. Customer Analysis:
+      - Conduct surveys and gather feedback to understand why customers are not really purchasing the worst selling products.
+      - The insight gotten from the survey should be used to improve marketing strategies and feedback should be given to the supplliers or manufacturers to improve product features and pricing.
+4. Marketing Campaigns:
+      -  targeted promotions should be run for new product in stock to increase awareness and trial purchases.
 
 ```DAX
 TotalQuantity = SUM('order details'[quantity] )
