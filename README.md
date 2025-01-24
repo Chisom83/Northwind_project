@@ -227,71 +227,59 @@ After SQL analysis,the data was imported into Power BI for visualization and rep
 ### KPIs Measures Created
 
 #### Total Orders
-```DAx
+```DAX
 Total Orders = DISTINCTCOUNT(orders[orderID])
 ``` 
 
-❑ Total Revenue
-```
+##### Total Revenue
+```DAX
 Total Revenue = SUMX('order details', 'order details'[quantity] * RELATED(products[unitPrice]) * (1 - 'order details'[discount]))
-``` Power Bi
+``` 
 
-❑ Average Order Value
-```
+##### Average Order Value
+```DAX
 AOV = AVERAGEX(orders, [Total Revenue])
-``` Power Bi
+``` 
 
-❑ Shipping Efficiency (Average Shipping Time)
+##### Shipping Efficiency (Average Shipping Time)
 ```
 Average Shipping Time = AVERAGEX(orders,orders[shippedDate] - orders[orderDate])
-``` Power Bi
-
-
-
-
-
-
-
-
- 	
-
-
-
-
-PYAOV = 
-VAR PY = CALCULATE([AOV],PREVIOUSYEAR('Calendar'[Date]))
-VAR CY = [AOV]
-VAR PCT = FORMAT(DIVIDE(CY - PY, PY, 0), "0%")
-VAR ARROW_SIGN = IF(CY > PY,"◬", "▽")
-RETURN "PY:" & PCT & ARROW_SIGN
-```Power BI
-
-``
+``` 
+- Previous Year (PY) was calculated for all the KPIs to compare it with the current year
+```DAX  
 PYOrders = 
 VAR PY = CALCULATE([Total Orders],PREVIOUSYEAR('Calendar'[Date]))
 VAR CY = [Total Orders]
 VAR PCT = FORMAT(DIVIDE(CY - PY, PY, 0), "0%")
 VAR ARROW_SIGN = IF(CY > PY,"◬", "▽")
 RETURN "PY:" & PCT & ARROW_SIGN
-``` Power BI
-
-``
+```
+```DAX
 PYRevenue = 
 VAR PY = CALCULATE([Total Revenue],PREVIOUSYEAR('Calendar'[Date]))
 VAR CY = [Total Revenue]
 VAR PCT = FORMAT(DIVIDE(CY - PY, PY, 0), "0%")
 VAR ARROW_SIGN = IF(CY > PY,"◬", "▽")
 RETURN "PY:" & PCT & ARROW_SIGN
-``` Power BI
+``` 
+ 
+```DAX
+PYAOV = 
+VAR PY = CALCULATE([AOV],PREVIOUSYEAR('Calendar'[Date]))
+VAR CY = [AOV]
+VAR PCT = FORMAT(DIVIDE(CY - PY, PY, 0), "0%")
+VAR ARROW_SIGN = IF(CY > PY,"◬", "▽")
+RETURN "PY:" & PCT & ARROW_SIGN
+```
 
-``
+```DAX
 PYAST = 
 VAR PY = CALCULATE([Average Shipping Time],PREVIOUSYEAR('Calendar'[Date]))
 VAR CY = [Average Shipping Time]
 VAR PCT = FORMAT(DIVIDE(CY - PY, PY, 0), "0%")
 VAR ARROW_SIGN = IF(CY > PY,"◬", "▽")
 RETURN "PY:" & PCT & ARROW_SIGN
-``` Power BI
+``` 
 
 ### Business Questions:
 ❑ Are there any noticeable sales trends over time?
