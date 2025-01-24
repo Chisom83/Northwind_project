@@ -226,7 +226,7 @@ After SQL analysis,the data was imported into Power BI for visualization and rep
 
 ### KPIs Measures Created
 
-#### Total Orders
+##### Total Orders
 ```DAX
 Total Orders = DISTINCTCOUNT(orders[orderID])
 ``` 
@@ -283,18 +283,53 @@ RETURN "PY:" & PCT & ARROW_SIGN
 ``` 
 
 ### Business Questions:
-❑ Are there any noticeable sales trends over time?
+1. Are there any noticeable sales trends over time?
+- To analyze sales trends over time, the following steps were taken:
+The Total Revenue calculated for the KPIs was used, the month field from the calendar table was used for grouping. A line chart was plotted to visualize the trends.
+Tooltip was created in a different page showing the Total Revenue and Total Quantity per month.
+##### Insights
+#General Insight#
+- There is a noticeable sales trend overall.
+- From October to April, sales were high showing a peak period but from May to September, sales fluctuated and declined.
+###### Yearly Breakdown
+- 2013
+   - Sales was recorded fro the second half of the year.
+   - Peaks: November recorded the higest sales, followed by slight increase in October, December, July and August.
+   - Lows: September experience a very low sales.
 
-In calculating for the sales trend I had to used the total revenue which I have calculated and the month from the calender table to achieve this and I ploted it in using a line chart and added quantity in the tooltip inorder to be able to see the total quantity of goods purchased in every month.
+- 2014
+   - Sales were recorded for the entire year.
+   - Peaks: January, October and December show significant increase in sales.
+   - Lows: Other months experienced a decline
+
+- 2015
+   - Sales were recorded for the first half of the year.
+   - Peaks: January to April show increase in sales.
+   - Lows: May recorded a very low increase in sales
  
-❑ Which are the best and worst selling products?
+##### Inference
+The downward sales trend is attributed to some of these factors:
+
+##### Recommendations
+1. Stock Management:
+ - Ensure that goods are adequately stocked during high sales months and reduced during low sales month.
+2. Market Research:
+ -  Deeper research into the downward sales trend should be conducted, esspecially April to September.
+ -  Customer preference should also be investigated inorder to stock up that generated sales.  
+3. Adjust Strategies:
+ - Marketing strategies and promotions should be implemented during low sales months to boost demand.
+ - Inventory management should be optimized to aling with sales pattern and avoid stock-outs.
+   
+2. Which are the best and worst selling products?
+- To analyze the best and worst selling products, the following steps were taken:
+- 
 This can be achieved by using different method by creating two different bar chart that will show the best selling product in quantity and the other chart worst selling product by quantity.
 The order method can be creating a measure that will show the best selling product and worst selling product in the same chart and creating a new table for top selling product and buttom selling product using it as a slicer to filter each.
 I used the the second method by creating a single bar chart that comporise both the best and worst selling product. in achieving this method different measures were created.
 
-``
+```DAX
 TotalQuantity = SUM('order details'[quantity] )
-``` Power BI
+```
 
 I created a table to show the top and buttom field 
 ``
