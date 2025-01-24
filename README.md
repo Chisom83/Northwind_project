@@ -290,8 +290,10 @@ The Total Revenue calculated for the KPIs was used, the month field from the cal
 Tooltip was created in a different page showing the Total Revenue and Total Quantity per month.
 #### Insights
 General Insight
-     - There is a noticeable sales trend overall.
-     - From October to April, sales were high showing a peak period but from May to September, sales fluctuated and declined.
+
+   - There is a noticeable sales trend overall.
+   
+   - From October to April, sales were high showing a peak period but from May to September, sales fluctuated and declined.
 ##### Yearly Breakdown
 - 2013
    - Sales was recorded fro the second half of the year.
