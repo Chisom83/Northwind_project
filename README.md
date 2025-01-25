@@ -482,31 +482,128 @@ General Insight
      
 
 4. Are shipping costs consistent across providers?
-I created a measure to calculate for the Range. i draged my Company_Name to the Y axis and shippingCostRange to the X axis. Then used a Bar Chart to visualize it. 
-``
+To determine the consistency of shipping costs across providers, the following steps were taken:
+- Created a measure to calculate Shipping Range:
+  
+``` DAX
 ShippingCostRange = 
 MAX(orders[freight]) -
 MIN(orders[freight])
-``` Power BI
+```
+#### Visualization
+ - Chart Type: Bar Chart
+ - Y-Axis: Company Name
+ - X-Axis: Shipping Range
 
-❑ How fast is their delivery service, how many orders are delivered on time or late?
-In achieving this I created measures to show late delivery and on time delivery then clicked on pie chart and draged the two measures to the value.
+#### Insights
+General Insight
+_ Federal Shipping has the highest range of shipping cost, followed by United Package while Speedy Express is the cheapest.
+- Delivery Performance:
+     - Federal Shipping: Delivered 218 orders, with 210 on time and 8 late.
+     - United Package: Delivered 276 orders, with 261 on time and 15 late.
+     - Speedy Exppress: Delivered 206 orders, with 197 on time and 9 late.
+
+##### Yearly Breakdown
+2013
+- United Package had the highest shipping costs followed by Federal Shipping while Speedy Express remained the cheapest.
+2014
+- Federal Shipping had the highest shipping cost followed by United Package with Speedy Express still the cheapest.
+2015
+- United package again had the highest shipping cost followed by Federal Shipping with Speedy Express maintaining its position as the cheapest option.
+
+#### Inference
+- Inconsistency Across Providers:
+   - Shipping costs vary significantly between providers with Federal Shippind and United Package showing the highest ranges.
+
+- Preferred Provider:  
+     - Northwind Traders uses United Package the most because of its capacity to handle a larger number of orders.
  
-``
+- Affordable Option:
+     - Speedy Express remains the most affordable provider and has a decent on-time delivery rate, making it a reliable option.
+ 
+  #### Recommendations
+- Negotiate Shipping Costs:
+   - Engage with United Package and Federal Shipping to negotiate price , especially given the high volume of orders they handle for NorthWind Traders.
+ 
+- Shift Focus to Speedy Express:
+   - If negotiations fail, shift more orders to Speedy Express which offers competitive pricing and acceptable delivery performance.
+ 
+- Diversify Shipping Providers:
+   -  Diversifying shippments across all providers to balance cost and delivery performance. Speedy Express could be used for less-time sensitive deliveries and United Package for high-priority shipments.
+
+5. How fast is their delivery service, how many orders are delivered on time or late?
+To analyze delivery speedy the following steps were taken:
+
+- Late delivery measure was created to calculate the number of late delivered.
+  
+```DAX
 LateDelivery = 
  CALCULATE(
     COUNTROWS(orders),
     orders[shippedDate] > orders[requiredDate])
-``` Power BI
+``` 
 
-``
+On-time delivery measure was created to calculate the number of orders delivered on time.
+
+```DAX
 OnTimeDelivery = 
  CALCULATE(
     COUNTROWS(orders),
     orders[shippedDate] <= orders[requiredDate])
-``` Power BI
+```
 
+#### Visualization
+- Chart Type: Pie Chart
+- Values: On-Time Delivery and Late Delivery.
 
+#### Insights
+General Insight
+- A total of 700 orders were delivered:
+   - 668 (95.43%) were delivered on time.
+   - 32 (4.57%) were delivered late.
+   - Conclusion: The delivery service is generally fast, with most orders being delivered on time.
+
+ ##### Yearly Breakdown
+ 2013
+ - Total Orders: 130
+   - On-Time: 125 (96.15%)
+   - Late: 5 (3.85%)
+   - Conclusion: Delivery was fast with very few late delivery.
+
+2014
+- Total Orders: 359
+   - On-Time: 340 (94.71%)
+   - Late: 19 (5.29%)
+   - Conclusion: Despite more orders in 2014, delivery performance remained excellent.
+ 
+2015
+- Total Orders: 211
+   - On-Time: 203 (96.21%)
+   - Late: 8 (3.79%)
+   - Conclusion: Delivery service was also fast and efficient.
+ 
+#### Inferences
+- Yearly Delivery Trends:
+    - The number of orders delivered in 2014 is significantly higher because it reflect a full year of data, while 2013 and 2015 only recorded six months of data.
+ 
+- On-Time Delivery Rate:
+    - Across all years, the percentage of on-time deliveries is consistently above 94%, indicating that the shipping providers are reliable and efficient.
+ 
+- Late Deliveries:
+     - Late deliveries account for less than 5% of total deliveries, showing that delays are minimal and do not significantly affect the overall delivery performance.
+ 
+- Shipping Providers Contribution:
+     - The strong on-time delivery rate shows that the shipping companies employed by NorthWind Traders are doing well in meeting delivery deadline.
+ 
+#### Recommendations:
+- Maintain Current Shipping Providers:
+     - Continue working with the current shipping providers, as they have demonstrated high levels of reliablity and timeliness.
+ 
+- Analyze Late Deliveries:
+     -  Investigate the reason for late deliveries to identify and address any recurring issues,like external factors such as weather or internal inefficiencies in logistics.
+ 
+- Encourage Speedy Express:
+     - Consider allocating more deliveries to Speedy Express, as they have shown good performance in cost and timely delivery, further boosting efficiency.
 ### customize the visuals
 - Use the Format page to adjust colors, fonts and labels.
 - Add titles and data label to the visuals. 
