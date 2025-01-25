@@ -245,8 +245,9 @@ AOV = AVERAGEX(orders, [Total Revenue])
 ##### Shipping Efficiency (Average Shipping Time)
 ```
 Average Shipping Time = AVERAGEX(orders,orders[shippedDate] - orders[orderDate])
-``` 
+```
 - Previous Year (PY) was calculated for all the KPIs to compare it with the current year
+  
 ```DAX  
 PYOrders = 
 VAR PY = CALCULATE([Total Orders],PREVIOUSYEAR('Calendar'[Date]))
@@ -291,7 +292,7 @@ Tooltip was created in a different page showing the Total Revenue and Total Quan
 #### Insights
 General Insight
 
-   - There is a noticeable sales trend overall.
+   - There is a downward noticeable sales trend overall.
    
    - From October to April, sales were high showing a peak period but from May to September, sales fluctuated and declined.
 ##### Yearly Breakdown
@@ -326,20 +327,26 @@ The downward sales trend is attributed to some of these factors:
 2. Which are the best and worst selling products?
    
 To determine the best and worst selling products the following steps were taken:
+
 - Measure creation:
-       - Total Quantity measure was created to calculate the sum of quantities sold:
+  
+-  Total Quantity measure was created to calculate the sum of quantities sold:
+  
 ```DAX  
 TotalQuantity = SUM('order details'[quantity] )
 ```
-      - Ranking option table was created to show any number of best/worst selling product needed to be seen:
+- Ranking option table was created to show any number of best/worst selling product needed to be seen:
+  
 ```DAX      
 Ranking option = GENERATESERIES(1, 5, 1)
 ```
-       - TopBottom table was created to filter top/bottom product dynamically:
+ - TopBottom table was created to filter top/bottom product dynamically:
+   
 ```DAX       
 TopButtom = {"top","Buttom"}
 ```
-       - Created a ranking measure for product based on quantity along with its integration with other measures for comprehensive analysis:
+- Created a ranking measure for product based on quantity along with its integration with other measures for comprehensive analysis:
+  
 ```DAX
 RankBestWorstSellingProduct = 
 VAR _bestproduct = RANKX( ALL(products),[TotalQuantity], ,DESC)
@@ -423,34 +430,56 @@ The performance of the best/worst selling product is due to one of the following
 3. Can you identify any key customers?
 
 To identify key customers, the following steps were taken:
-    - Chart Type: Bar Chart
-    - Y - Axis: customer_id
-    - X - Axis: Total Revenue
-    - Legend: Company_Name
-    - Tooltip: Quantity
+
+ - Chart Type: Bar Chart
+    
+ - Y - Axis: customer_id
+    
+ - X - Axis: Total Revenue
+    
+ - Legend: Company_Name
+
+ - Tooltip: Quantity
+    
 - To show the key customer I applied a Top N filter on customer_id in the filter pane, set it to Top 5 based on Total Revenue and click Apply Filter.
 
 #### Insights
 
 General Insight
-     - SAVEA is the overall key customer with a total revenue of $94,063, followed by ERNSH with a total revenue of $85,630.
+
+ - SAVEA is the overall key customer with a total revenue of $94,063, followed by ERNSH with a total revenue of $85,630.
+     
 ##### Yearly Breakdown
+
 2013
+
    - ERNSH was the key customer with a total revenue of $17,368, followed by FRANK with $12,191.
+     
 2014
+
   - SAVEA emerged as the key customer with a total revenue of $48,715, followed by FRANK with $45,945.
-2015
+    
+   2015 
+ 
   - SAVEA retained its position as the key customer with a total revenue of $35,549, followed by HANAR with $23,821.
 
 #### Inference
-1. Starting in 2014, SAVEA consistently became the key customer, contributing the highest revenue across 2014 and 2015. This indicates a strong and growing market strategy
+
+1. Starting in 2014, SAVEA consistently became the key customer, contributing the highest revenue across 2014 and 2015. This indicates a strong and growing market strategy.
+   
 2. Key customers like SAVEA and ERNSH have show strong engagement with NorthWind Traders, which includes higher order or quantity.
 
 #### Recommendation
+
 1. Maintain Strong Relationship with Key Customers
+   
    - Focused on strengthening relationships with key customers through personalized discounts and exclusive offer.
-2. Customer Retension Strategy 
+     
+2. Customer Retension Strategy
+   
    - Ensure continous support to key customers by offering excellent customer service and frequent check-ins to understand their evolving needs.
+
+     
 
 4. Are shipping costs consistent across providers?
 I created a measure to calculate for the Range. i draged my Company_Name to the Y axis and shippingCostRange to the X axis. Then used a Bar Chart to visualize it. 
