@@ -497,6 +497,9 @@ MIN(orders[freight])
  - Y-Axis: Company Name
  - X-Axis: Shipping Range
 
+
+<div aling="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Charts/Bar%20chart%20shi.png" alt="Shipping cost" width="500"> </div>
+
 #### Insights
 General Insight
 _ Federal Shipping has the highest range of shipping cost, followed by United Package while Speedy Express is the cheapest.
