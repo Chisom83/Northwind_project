@@ -558,6 +558,9 @@ OnTimeDelivery =
 - Chart Type: Pie Chart
 - Values: On-Time Delivery and Late Delivery.
 
+
+<div aling="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Charts/Pie%20Chart.png" alt="On-Time/Late Delivery" width="500"> </div>
+
 #### Insights
 General Insight
 - A total of 700 orders were delivered:
