@@ -31,10 +31,10 @@ Northwind Traders is a global supplier of specialty food products and this proje
 ### Tools Used
 - Excel: for data cleaning
 - Structure Query Language(SQL): for querying the data
-- Power Bi: for data visualizations
+- Power Bi: for data modeling and visualizations
 
 ### Data Preparation
-- Data Conversion: The original dataset was in xls format, so i converted it to a csv for better compactibility and efficiency in procesing.
+- Data Conversion: The original dataset was in xls format, so I converted it to a csv for better compactibility and efficiency in processing.
 - Data Cleaning: Duplicate were removed and I ensured the dataset was clean and ready for analysis.
 
 ### SQL
@@ -204,25 +204,25 @@ GROUP BY delivery_status;
 After SQL analysis,the data was imported into Power BI for visualization and reporting.
 - Data Transformation:
 
-- After importing the dataset, the Transform option was selected to make necessary corrections.
+     - After importing the dataset, the Transform option was selected to make necessary corrections.
 
-- Column header were updated and replaced using the "Use First Row as Headers" option in the Power Query Editor
+     - Column header were updated and replaced using the "Use First Row as Headers" option in the Power Query Editor
 
-- Unnecessary columns were deleted to streamline the dataset.
+     - Unnecessary columns were deleted to streamline the dataset.
 
-- The Category and Employment tables were hidden as they were not relevant for the analysis
+     - The Category and Employment tables were hidden as they were not relevant for this analysis
 
-- Changes were applied by clicking "Close & Apply."
+     - Changes were applied by clicking "Close & Apply."
 
 - Data Modeling:
  
-- I switched to report view to verify the data connections and made necessary adjustments to ensure proper relationship between tables.
+     - I switched to report view to verify the data connections and made necessary adjustments to ensure proper relationship between tables.
   
-- Calendar table was created and connected to the fact table to support time-based analysis.
+     - Calendar table was created and connected to the fact table to support time-based analysis.
 
 - Visualization
 
-- Interactive  visualization were designed to highlight key insight, measures and calculated columns were created to enhance the dashboard.
+     - Interactive  visuals were designed to highlight key insight,also measures and calculated columns were created to enhance the dashboard.
 
 ### KPIs Measures Created
 
@@ -287,17 +287,25 @@ RETURN "PY:" & PCT & ARROW_SIGN
 1. Are there any noticeable sales trends over time?
 - To analyze sales trends over time, the following steps were taken:
 
-The Total Revenue calculated for the KPIs was used, the month field from the calendar table was used for grouping. A line chart was plotted to visualize the trends.
+The Total Revenue calculated for the KPIs was used and the month field from the calendar table was used for grouping. A line chart was plotted to visualize the trends.
 Tooltip was created in a different page showing the Total Revenue and Total Quantity per month.
+
+#### Visualization
+- Chart Type: Line Chart
+
+- X-Axis: Month
+
+- Y-Axis: Total Revenue
+  
 #### Insights
 General Insight
 
-   - There is a downward noticeable sales trend overall.
+   - There is a downward noticeable sales trend overtime.
    
    - From October to April, sales were high showing a peak period but from May to September, sales fluctuated and declined.
 ##### Yearly Breakdown
 - 2013
-   - Sales was recorded fro the second half of the year.
+   - Sales was recorded for the second half of the year.
    - Peaks: November recorded the higest sales, followed by slight increase in October, December, July and August.
    - Lows: September experience a very low sales.
 
@@ -315,12 +323,12 @@ General Insight
 The downward sales trend is attributed to some of these factors:
 
 #### Recommendations
-1. Stock Management:
-      - Ensure that goods are adequately stocked during high sales months and reduced during low sales month.
-2. Market Research:
+- Stock Management:
+     - Ensure that goods are adequately stocked during high sales months and reduced during low sales month.
+- Market Research:
      -  Deeper research into the downward sales trend should be conducted, esspecially April to September.
-     -  Customer preference should also be investigated inorder to stock up that generated sales.  
-3. Adjust Strategies:
+     -  Customer preference should also be analyzed inorder to stock up on goods that generate sales.  
+- Adjust Strategies:
     - Marketing strategies and promotions should be implemented during low sales months to boost demand.
     - Inventory management should be optimized to aling with sales pattern and avoid stock-outs.
    
@@ -328,7 +336,7 @@ The downward sales trend is attributed to some of these factors:
    
 To determine the best and worst selling products the following steps were taken:
 
-- Measure creation:
+- Measures created:
   
 -  Total Quantity measure was created to calculate the sum of quantities sold:
   
@@ -359,6 +367,16 @@ VAR _ranking = IF(SELECTEDVALUE(TopButtom[Value]) = "top"
 RETURN
 IF(_ranking <= 'Ranking option'[Ranking option Value], [TotalQuantity])
 ```
+
+#### Visualization
+- Chart Type: Stacked Bar Chart
+
+- Y-Axis: Product_Name
+
+- X-Axis: Best/Worst Selling Product
+
+- Tooltips: Total Revenue
+
 #### Insight 
 General Insight
 
@@ -396,41 +414,43 @@ General Insight
 
 The performance of the best/worst selling product is due to one of the following:
 
-1. Best Selling Products
+- Best Selling Products
    
    - The products are well marketed and meet high customer demand.
         
    - They are consistently avaliable and competitive pricing.
         
-2. Worst Selling Products
+- Worst Selling Products
    
    - They are new products and haven't gained market traction yet.
         
    - Lack of avaliability, low quality and lack of awareness of the product.
 
 #### Recommendation
-1. Stock Management:
+- Stock Management:
    
     - Increase inventory for the best selling product to meet growing demand.
    
-2. Improvement for Worst Selling Products
+- Improvement for Worst Selling Products
    
-      - Collaboration with suppliers or manufacturers to understand the product issue and address potential quality or supply chain issues.
+   - Collaboration with suppliers or manufacturers to understand the product issue and address potential quality or supply chain issues.
         
-3. Customer Analysis:
+- Customer Analysis:
    
-      - Conduct surveys and gather feedback to understand why customers are not really purchasing the worst selling products.
+   - Conduct surveys and gather feedback to understand why customers are not really purchasing the worst selling products.
         
-      - The insight gotten from the survey should be used to improve marketing strategies and feedback should be given to the supplliers or manufacturers to improve product features and pricing.
+   - The insight gotten from the survey should be used to improve marketing strategies and feedback should be given to the supplliers or manufacturers to improve product features and pricing.
         
-4. Marketing Campaigns:
+- Marketing Campaigns:
    
-      -  targeted promotions should be run for new product in stock to increase awareness and trial purchases.
+    - targeted promotions should be run for new product in stock to increase awareness and trial purchases.
+  
 
 3. Can you identify any key customers?
 
 To identify key customers, the following steps were taken:
 
+#### Visualization
  - Chart Type: Bar Chart
     
  - Y - Axis: customer_id
@@ -467,17 +487,17 @@ General Insight
 
 #### Inference
 
-1. Starting in 2014, SAVEA consistently became the key customer, contributing the highest revenue across 2014 and 2015. This indicates a strong and growing market strategy.
+- Starting in 2014, SAVEA consistently became the key customer, contributing the highest revenue across 2014 and 2015. This indicates a strong and growing market strategy.
    
-2. Key customers like SAVEA and ERNSH have show strong engagement with NorthWind Traders, which includes higher order or quantity.
+- Key customers like SAVEA and ERNSH have show strong engagement with NorthWind Traders, which includes higher order or quantity.
 
 #### Recommendation
 
-1. Maintain Strong Relationship with Key Customers
+- Maintain Strong Relationship with Key Customers
    
    - Focused on strengthening relationships with key customers through personalized discounts and exclusive offer.
      
-2. Customer Retension Strategy
+- Customer Retension Strategy
    
    - Ensure continous support to key customers by offering excellent customer service and frequent check-ins to understand their evolving needs.
 
@@ -502,7 +522,7 @@ MIN(orders[freight])
 
 #### Insights
 General Insight
-_ Federal Shipping has the highest range of shipping cost, followed by United Package while Speedy Express is the cheapest.
+_ Federal Shipping has the highest shipping cost, followed by United Package while Speedy Express is the cheapest.
 - Delivery Performance:
      - Federal Shipping: Delivered 218 orders, with 210 on time and 8 late.
      - United Package: Delivered 276 orders, with 261 on time and 15 late.
@@ -511,8 +531,10 @@ _ Federal Shipping has the highest range of shipping cost, followed by United Pa
 ##### Yearly Breakdown
 2013
 - United Package had the highest shipping costs followed by Federal Shipping while Speedy Express remained the cheapest.
+  
 2014
 - Federal Shipping had the highest shipping cost followed by United Package with Speedy Express still the cheapest.
+  
 2015
 - United package again had the highest shipping cost followed by Federal Shipping with Speedy Express maintaining its position as the cheapest option.
 
@@ -535,6 +557,7 @@ _ Federal Shipping has the highest range of shipping cost, followed by United Pa
  
 - Diversify Shipping Providers:
    -  Diversifying shippments across all providers to balance cost and delivery performance. Speedy Express could be used for less-time sensitive deliveries and United Package for high-priority shipments.
+     
 
 5. How fast is their delivery service, how many orders are delivered on time or late?
 To analyze delivery speedy the following steps were taken:
