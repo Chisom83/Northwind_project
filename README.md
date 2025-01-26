@@ -443,6 +443,8 @@ To identify key customers, the following steps were taken:
     
 - To show the key customer I applied a Top N filter on customer_id in the filter pane, set it to Top 5 based on Total Revenue and click Apply Filter.
 
+ <div align="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Charts/Bar%20chart%20cus.png" alt="Key Customer by Revenue" width="500"> </div>
+
 #### Insights
 
 General Insight
