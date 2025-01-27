@@ -654,5 +654,13 @@ General Insight
 - Use the Format page to adjust colors, fonts and labels.
 - Add titles and data label to the visuals. 
 
+#### Power BI Dashboard
+
+- Screenshot of the dashboard
+
+
+<div aling="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Charts/Power%20BI%20Dashboard.png" alt="Dashboard Screenshot" width="600"> </div>
+
  
-[Download Power BI Dashboard] (https://github.com/Chisom83/Northwind_project/blob/main/Northwind_project.pbix)
+[Download Power BI Dashboard]
+(https://github.com/Chisom83/Northwind_project/blob/main/Northwind_project.pbix)
