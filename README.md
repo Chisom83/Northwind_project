@@ -296,6 +296,10 @@ Tooltip was created in a different page showing the Total Revenue and Total Quan
 - X-Axis: Month
 
 - Y-Axis: Total Revenue
+
+
+<div align="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Charts/Line%20chart.png" alt="Sales Trend" width="500"> </div>
+
   
 #### Insights
 General Insight
