@@ -376,9 +376,17 @@ IF(_ranking <= 'Ranking option'[Ranking option Value], [TotalQuantity])
 - X-Axis: Best/Worst Selling Product
 
 - Tooltips: Total Revenue
+  
 
+- Best Selling Product
 
 <div align="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Charts/Bar%20chart%20pro.png" alt="Best Selling Product" width="500"> </div>
+
+
+- Worst Selling Product
+
+
+<div align="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Charts/Bar%20chart%20buttom.png" alt="Worst Selling Product" width="500"> </div>
 
 #### Insight 
 General Insight
