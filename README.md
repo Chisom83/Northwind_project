@@ -377,6 +377,9 @@ IF(_ranking <= 'Ranking option'[Ranking option Value], [TotalQuantity])
 
 - Tooltips: Total Revenue
 
+
+<div align="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Charts/Bar%20chart%20pro.png" alt="Best Selling Product" width="500"> </div>
+
 #### Insight 
 General Insight
 
