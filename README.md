@@ -655,3 +655,4 @@ General Insight
 - Add titles and data label to the visuals. 
 
  
+[Download Power BI Dashboard] (https://github.com/Chisom83/Northwind_project/blob/main/Northwind_project.pbix)
