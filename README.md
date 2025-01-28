@@ -1,7 +1,22 @@
 # Northwind_project
 This is all about my capstone project
 
-### project Overview
+## Table of Content
+[Project Overview](#project-overview)
+
+[Data Source](#data-source)
+
+[Key Performance Indicator KPIs](#key-performance-indicator-kpis)
+
+[Business Questions](#business-questions)
+
+[Data Visualization](#data-visualizations)
+
+[customize visuals and slicers](#customize-visuals-and-slicers)
+
+
+
+### Project Overview
 Northwind Traders is a global supplier of specialty food products and this project intails helping Northwind optimize its operations by analyzing customer orders, product performance, shipping efficiency and employee management by building a database with the provided data and quering it to answer business questions and creating an intractive dashboard using any BI tool to derive actionable insight, answer critical business questions, identify opportunities for growth and efficiency.
 
 ### Business Requirement
@@ -745,7 +760,7 @@ To enhance the interactivity and filtering options within the report, the follow
 
     - Also connected to the Best/Worst Selling Product measure allows users to filter and explore any number of Best or worst products by ranking, providing flexibility in analysis.
 
-### customize the visuals and slicers
+### customize visuals and slicers
 After importing the chart, various customizations were applied to enhance the overall presentation and readability of the visuals:
 
 - Using the Format Pane:
@@ -759,7 +774,7 @@ After importing the chart, various customizations were applied to enhance the ov
    - Data labels were included to display key metrics directly on the visuals, making it easier to interpret the data at a glance.
 
 
-#### NorthWind Traders  Dashboard
+#### NorthWind Traders Dashboard
 
 - Screenshot of the dashboard
 
