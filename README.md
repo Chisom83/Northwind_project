@@ -229,7 +229,19 @@ After SQL analysis,the data was imported into Power BI for visualization and rep
 ##### Total Orders
 ```DAX
 Total Orders = DISTINCTCOUNT(orders[orderID])
-``` 
+```
+
+#### Insight
+
+A total of 700 orders were recorded across all years analyzed.
+
+#####  Yearly Breakdown
+
+- 2013: 130 orders
+
+- 2014: 359 orders
+
+- 2015: 211 orders
 
 ##### Total Revenue
 ```DAX
@@ -237,16 +249,57 @@ Total Revenue = SUMX('order details', 'order details'[quantity] *
      RELATED(products[unitPrice]) * (1 - 'order details'[discount]))
 ``` 
 
+#### Insight
+
+The total revenue accumulated across all years analyzed is $1.13M.
+
+##### Yearly Breakdown
+
+- 2013:
+The business recorded total revenue of $227k, with sales beginning in the second half of the year.
+
+-  2014:
+A full year of sales generated a total revenue of $565k.
+
+- 2015:
+Sales were recorded in the first half of the year, generating $339k total revenue.
+
 ##### Average Order Value
 ```DAX
 AOV = AVERAGEX(orders, [Total Revenue])
 ``` 
 
+#### Insight
+
+The overall AOV across all years analyzed is $1.62k.
+
+##### Yearly Breakdown
+
+- 2013: $1.75k
+
+- 2014: $1.58k
+
+- 2015: $1.60k
+
 ##### Shipping Efficiency (Average Shipping Time)
 ```
 Average Shipping Time = AVERAGEX(orders,orders[shippedDate] - orders[orderDate])
 ```
-- Previous Year (PY) was calculated for all the KPIs to compare it with the current year
+
+#### Insight
+
+The overall average shipping time across all years analyzed is 9 days.
+
+##### Yearly Breakdown
+
+- 2013: 8 days
+
+- 2014: 9 days
+
+- 2015: 8 days
+
+
+#### Previous Year (PY) was calculated for all the KPIs to compare it with the current year
   
 ```DAX  
 PYOrders = 
@@ -256,6 +309,13 @@ VAR PCT = FORMAT(DIVIDE(CY - PY, PY, 0), "0%")
 VAR ARROW_SIGN = IF(CY > PY,"◬", "▽")
 RETURN "PY:" & PCT & ARROW_SIGN
 ```
+
+#### PY (Year-to-Year) Comparison
+
+- From 2013 to 2014, total orders increased by 176%.
+
+- From 2014 to 2015, total orders decreased by -40%.
+
 ```DAX
 PYRevenue = 
 VAR PY = CALCULATE([Total Revenue],PREVIOUSYEAR('Calendar'[Date]))
@@ -264,6 +324,12 @@ VAR PCT = FORMAT(DIVIDE(CY - PY, PY, 0), "0%")
 VAR ARROW_SIGN = IF(CY > PY,"◬", "▽")
 RETURN "PY:" & PCT & ARROW_SIGN
 ``` 
+
+#### PY (Year-to-Year) Comparison
+
+- From 2013 to 2014, revenue increased by 149%.
+
+- From 2014 to 2015, revenue decreased by -40%.
  
 ```DAX
 PYAOV = 
@@ -273,6 +339,12 @@ VAR PCT = FORMAT(DIVIDE(CY - PY, PY, 0), "0%")
 VAR ARROW_SIGN = IF(CY > PY,"◬", "▽")
 RETURN "PY:" & PCT & ARROW_SIGN
 ```
+
+#### PY (Year-to-Year) Comparison
+
+- From 2013 to 2014, the AOV decreased by -10%.
+
+- From 2014 to 2015, the AOV increased by 2%.
 
 ```DAX
 PYAST = 
