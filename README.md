@@ -269,6 +269,9 @@ Total Revenue = SUMX('order details', 'order details'[quantity] *
      RELATED(products[unitPrice]) * (1 - 'order details'[discount]))
 ``` 
 
+
+<div align="xenter"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Image/Total%20Revenue.png" alt="Total Revenue" width="500"> </div>
+
 #### Insight
 
 The total revenue accumulated across all years analyzed is $1.13M.
