@@ -789,5 +789,5 @@ After importing the chart, various customizations were applied to enhance the ov
 <div aling="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Charts/Power%20BI%20Dashboard.png" alt="Dashboard Screenshot" width="600"> </div>
 
  
-[Download Power BI Dashboard]
+[Download NorthWind Traders Dashboard]
 (https://github.com/Chisom83/Northwind_project/blob/main/Northwind_project.pbix)
