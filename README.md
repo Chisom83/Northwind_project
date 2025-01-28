@@ -290,7 +290,9 @@ Sales were recorded in the first half of the year, generating $339k total revenu
 ##### Average Order Value
 ```DAX
 AOV = AVERAGEX(orders, [Total Revenue])
-``` 
+```
+
+<div align="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Image/AOV.png" alt="AOV" width="500"> </div>
 
 #### Insight
 
