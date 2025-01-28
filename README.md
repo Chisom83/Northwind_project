@@ -28,6 +28,9 @@ Northwind Traders is a global supplier of specialty food products and this proje
 
 ❑ How fast is their delivery service, how many orders are delivered on time or late?
 
+#### Data Source
+The dataset used for this analysis can be [downloaded here](https://www.microsoft.com)
+
 ### Tools Used
 - Excel: for data cleaning
 - Structure Query Language(SQL): for querying the data
