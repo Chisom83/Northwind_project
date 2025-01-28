@@ -397,6 +397,10 @@ General Insight
  
 #### Inference
 The downward sales trend is attributed to some of these factors:
+- Increased Competition:
+     - Competitors offering similar products at lower price.
+- Inadequate Customer Relationship:
+     - Their is an inefficienct effort in customers engagement and retention.
 
 #### Recommendations
 - Stock Management:
