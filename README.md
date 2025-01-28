@@ -722,11 +722,37 @@ General Insight
  
 - Encourage Speedy Express:
      - Consider allocating more deliveries to Speedy Express, as they have shown good performance in cost and timely delivery, further boosting efficiency.
-### customize the visuals
-- Use the Format page to adjust colors, fonts and labels.
-- Add titles and data label to the visuals. 
+ 
+#### Slicers Used
+To enhance the interactivity and filtering options within the report, the following slicers were implemented:
 
-#### Power BI Dashboard
+-  Year Slicer:
+
+     - Used to filter data by year, enabling users to focus on specific years of interest.
+
+-  Value Slicer:
+
+     - Connected to the Best/Worst Selling Product measure to display either the best or worst-performing products based on user selection.
+
+- Ranking Option Slicer:
+
+    - Also connected to the Best/Worst Selling Product measure allows users to filter and explore any number of Best or worst products by ranking, providing flexibility in analysis.
+
+### customize the visuals and slicers
+After importing the chart, various customizations were applied to enhance the overall presentation and readability of the visuals:
+
+- Using the Format Pane:
+
+    - Adjusted colors, fonts, and labels to improve clarity and align visuals with the report's theme.
+
+- Adding Titles and Data Labels:
+
+   - Titles were added to each visual for better context and understanding.
+
+   - Data labels were included to display key metrics directly on the visuals, making it easier to interpret the data at a glance.
+
+
+#### NorthWind Traders  Dashboard
 
 - Screenshot of the dashboard
 
