@@ -249,6 +249,8 @@ After SQL analysis,the data was imported into Power BI for visualization and rep
 Total Orders = DISTINCTCOUNT(orders[orderID])
 ```
 
+<div aling="center"> <img src="https://github.com/Chisom83/Northwind_project/blob/main/Image/Total%20Orders.png" alt="Total Orders" width="500"> </div>
+
 #### Insight
 
 A total of 700 orders were recorded across all years analyzed.
